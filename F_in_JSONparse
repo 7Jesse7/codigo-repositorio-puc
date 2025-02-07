@@ -1,0 +1,11 @@
+var pess = '{"name":"Jessé", "birth":"1982-06-14T09:00:00.000Z", "city":"SM"}'
+
+var obj = JSON.parse(pess, function(key, value){
+    if (key=="birth"){
+        return new Date(value);
+    }
+    return value;
+});
+
+console.log("Nome: " + obj.name);
+console.log("Dnasc: " + obj.birth);
